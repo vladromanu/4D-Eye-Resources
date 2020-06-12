@@ -1,6 +1,22 @@
 Table of contents
 [TOC]
 
+### Filter strings
+```
+if (!string.IsNullOrWhiteSpace(request.Name))
+{
+    builder.Where("LOWER(name) LIKE @Name", new { Name = "%" + request.Name.ToLower().Trim() + "%"  });
+}
+```
+
+### Filter integers
+```
+if (request.DestinationId > 0)
+{
+    builder.Where("destination_id = @DestinationId", new { DestinationId = request.DestinationId });
+}
+```
+
 ### Dapper Fetch list with template 
 ```
 public async Task<IEnumerable<PropertyRoomtype>> FindAsync2(PropertyRoomTypeRequest request)
@@ -14,17 +30,17 @@ public async Task<IEnumerable<PropertyRoomtype>> FindAsync2(PropertyRoomTypeRequ
             var builder = new SqlBuilder();
             var selector = builder.AddTemplate($"{PropertyRoomtypeQueries.SelectAll} /**where**/");
 
-            if (request.PropertyId != 0)
+            if (request.PropertyId > 0)
             {
                 builder.Where("property_id = @Property_id", new { Property_id = request.PropertyId });
             }
 
-            if (request.OccupancyId != 0)
+            if (request.OccupancyId > 0)
             {
                 builder.Where("occupancy_id = @OccupancyId", new { OccupancyId = request.OccupancyId });
             }
 
-            if (request.RoomTypeId != 0)
+            if (request.RoomTypeId > 0)
             {
                 builder.Where("roomtype_id = @RoomTypeId", new { RoomTypeId = request.RoomTypeId });
             }
