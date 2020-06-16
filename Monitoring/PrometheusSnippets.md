@@ -1,6 +1,9 @@
 Table of Contents
 [TOC]
 
+##### Github Repo & samples
+https://github.com/prometheus-net/prometheus-net
+
 ##### Config 
 ```
 global: 
@@ -51,5 +54,13 @@ sum(engine_daemon_container_states_containers{state="running"}) - total accross 
 http_requests_total{code="200", handler="prometheus", method="get"} -- total request from prometheus
 http_requests_total{job=~"docker-.*"}[30s] -- total request from docker- jobs for the last 30s
 sum(irate(http_requests_total[5m])) -- total request over the last 5 minutes
+```
+
+
+##### Dotnet specific
+```
+sum(irate(w3svc_w3wp_requests_per_second[12h])) -- total request per second over the last 12 hours
+process_thread_count -- number of threads
+sum(dotnet_clr_memory_gen_0_heap_size) without(host. isntance, job, exported_instance) -- memory usage for dotnet
 ```
 
