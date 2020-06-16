@@ -1,6 +1,9 @@
 Table of contents 
 [TOC]
 
+### Startup project
+https://medium.com/@mazaher.muraj/quickly-setup-a-javascript-project-with-webpack-babel-scss-6c5db2bebab7
+
 ### Babel loader 
 Install: `npm install --save-dev babel-loader @babel/core`
 https://babeljs.io/en/setup#installation
