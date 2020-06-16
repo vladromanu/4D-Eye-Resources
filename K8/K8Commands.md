@@ -1,6 +1,8 @@
 Table of contents
 [TOC]
 
+**CheatSheet** https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+
 ### Common commands
 ```
 k config view 
@@ -9,7 +11,7 @@ k get namespace
 
 ### Switch context
 ```
-k config set-context --current --namespace=purchasing
+k config set-context --current --namespace=content-and-mapping
 ```
 
 ### Setting up secrets 
