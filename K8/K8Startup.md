@@ -13,7 +13,7 @@ azure cli tools
 ```
 
 
-### Install azulre cli 
+### Install azure cli 
 https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows?view=azure-cli-latest
 
 
