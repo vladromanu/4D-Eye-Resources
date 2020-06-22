@@ -113,8 +113,35 @@ sum(swarm_manager_nodes{job="docker-managers"}) by(state) -- managers by state
   A - count(kube_job_info{namespace="content-and-mapping"})
   B - kube_job_info{namespace="content-and-mapping"}
   ```
+* Requests by action (graph)
+  ```
+  sum(rate(wbid_hotels_http_requests_received_total{action!="", controller=~"WbProperties|PropertyMapping"}[5m])) by (action) * 60
+  ```
+* Rate of Requests per minute (graph)
+  ```
+  sum(rate(wbid_hotels_http_requests_received_total[5m]) * 60) + sum(rate(wbid_hotels_sh_http_requests_received_total[5m]) * 60) 
+  ```
+* Increase in responses by status coded for past 1h (graph)
+  ```
+  sum(increase(wbid_hotels_http_requests_received_total{action!="", controller=~"WbProperties|PropertyMapping"}[1h])) by (code)
+  ```
+* CPU Usage (gauge)
+  ```
+  sum(rate(container_cpu_usage_seconds_total{container_name="webbedsid-hotels"}[1m])) / sum (machine_cpu_cores) * 100
+  ```
+* Services CPU Usage (graph)
+  ```
+  sum(rate(container_cpu_usage_seconds_total{container_name="webbedsid-hotels"}[1m])) / sum (machine_cpu_cores) * 100
+  ```
+* Services Memory Usage (MB)(graph)
+  ```
+  sum(rate(container_memory_usage_bytes{container_name="webbedsid-hotels-shell-content", namespace="content-and-mapping", pod_name=~"webbedsid-hotels-shell-content-.*"}[5m])) by (pod_name) /1024/1024
+  ```
 
 
+### Explanations
+`request_count` would simply return 5
+`rate(request_count[5m])` would return the per second rate of requests averaged over the last 5 minutes
 
 
 #### Simple time series selection
