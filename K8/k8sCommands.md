@@ -17,6 +17,7 @@ k config set-context --current --namespace=content-and-mapping
 ### Setting up secrets 
 ```
 k get secret
+k get secret webbedsid-fake-secrets --output yaml
 k apply -f .\wbid-fake-secrets-dev.yaml
 k describe secret/webbedsid-fake-secrets
 ```
