@@ -22,6 +22,18 @@ k apply -f .\wbid-fake-secrets-dev.yaml
 k describe secret/webbedsid-fake-secrets
 ```
 
+### Services
+```
+k get services
+```
+
+### Pods
+```
+k get pods 
+k describe po nginx
+k delete po nginx
+```
+
 ##### Delete secret
 ```
 k delete secret secret/webbedsid-fake-secrets
