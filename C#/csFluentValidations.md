@@ -1,5 +1,12 @@
 Resource: https://docs.fluentvalidation.net/en/latest/start.html 
 
+Custom validators: https://docs.fluentvalidation.net/en/latest/custom-validators.html
+
+https://www.jerriepelser.com/blog/using-fluent-validation-with-asp-net-mvc-part-4-database-validation/
+
+https://docs.fluentvalidation.net/en/latest/configuring.html
+
+
 ### Example: 
 ```
 using FluentValidation;
