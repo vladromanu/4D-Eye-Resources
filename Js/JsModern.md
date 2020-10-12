@@ -2,7 +2,7 @@
 
 ## Arrow functions
 ```
-const X - function() {
+const X = function() {
     // 'this' here is the caller of X
 }
 
@@ -19,7 +19,7 @@ const mystery = 'answer';
 const obj = {
    p1: 10,
    f1() {},
-   f2: () => {}.
+   f2: () => {},
    [mystery]: 42 // value of mystery const 
 };
 
