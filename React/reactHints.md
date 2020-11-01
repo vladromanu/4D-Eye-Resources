@@ -1,7 +1,9 @@
 [TOC]
 
 # Simple Example
+
 App.js
+
 ```
 import React, { useState } from 'react';
 import './App.css';
@@ -10,7 +12,7 @@ import Button from "./Button";
 
 const App = () =>
 {
-  const [counter, setCounter] = useState(5); // Hook 
+  const [counter, setCounter] = useState(5); // Hook
   const incrementCounter = (value) => setCounter(counter * value);
 
   return (
@@ -29,6 +31,7 @@ export default App;
 ```
 
 Button.js
+
 ```
 import React from 'react';
 
@@ -47,6 +50,7 @@ export default Button;
 ```
 
 Display.js
+
 ```
 import React from 'react';
 
@@ -58,4 +62,20 @@ const Display = props =>
 }
 
 export default Display;
+```
+
+# Prop Types
+
+```
+Header.propTypes = {
+  name: PropTypes.string.isRequired, // is required attribute
+  currenyHour: PropTypes.number, // needs to be a number
+  city: PropTypes.string, // needs to be a string
+  callback: PropTypes.func,
+}
+
+Header.defaultProps = {
+  currentHour: "99", // default value for the string
+  callback: () => {}
+}
 ```
