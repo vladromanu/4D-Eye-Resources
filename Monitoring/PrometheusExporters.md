@@ -15,3 +15,5 @@ tar xvfz mysqld_exporter-*.*-amd64.tar.gz
 cd mysqld_exporter-*.*-amd64
 ./mysqld_exporter > mysqld.out 2>&1
 curl http://localhost:9104/metrics
+
+https://app.pluralsight.com/course-player?clipId=14e9380c-6e4e-4715-9969-fdc275090863
