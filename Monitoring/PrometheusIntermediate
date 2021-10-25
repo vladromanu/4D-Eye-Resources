@@ -1,0 +1,10 @@
+
+dotnet_total_memory_bytes{instance="eb:80", job="web"}   --- total memory usage for the app
+
+# Use [Fortio](https://github.com/fortio/fortio/) to send multiple concurrent GET requests:
+
+- load test defined in the [docker-compose-fortio.yaml](./docker-compose-fortio.yaml) Compose override file
+
+```
+docker-compose -f docker-compose.yaml -f docker-compose-fortio.yaml up fortio
+```
